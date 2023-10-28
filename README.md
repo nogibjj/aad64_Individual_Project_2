@@ -1,6 +1,8 @@
 # aad64_Individual_Project_2
 Rust CLI Binary with SQLite
 
+Click [here](https://youtu.be/_xBSWYm8h6o) for a YouTube video describing and demonstrating the project. 
+
 [![BuildBinary](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/build.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/build.yml)
 [![Format](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/format.yml)
 [![Lint](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/lint.yml)

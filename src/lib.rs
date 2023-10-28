@@ -15,18 +15,6 @@ struct Iris {
     class: String,
 }
 
-pub fn drop_iris_table(conn: &Connection) -> Result<()> {
-    conn.execute("DROP TABLE IF EXISTS iris", [])?;
-    Ok(())
-}
-
-pub fn table_exists(conn: &Connection, table_name: &str) -> Result<bool> {
-    let mut stmt = conn.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?")?;
-    let rows = stmt.query_map(&[table_name], |_| Ok(()))?;
-    let exists = rows.count() > 0;
-    Ok(exists)
-}
-
 pub fn create_iris_table(conn: &Connection) -> Result<()> {
     conn.execute(
         "CREATE TABLE IF NOT EXISTS iris (
@@ -136,6 +124,18 @@ pub fn order_iris_table(conn: &Connection) -> Result<()> {
         println!("{:?}", row?);
     }
     Ok(())
+}
+
+pub fn drop_iris_table(conn: &Connection) -> Result<()> {
+    conn.execute("DROP TABLE IF EXISTS iris", [])?;
+    Ok(())
+}
+
+pub fn table_exists(conn: &Connection, table_name: &str) -> Result<bool> {
+    let mut stmt = conn.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?")?;
+    let rows = stmt.query_map(&[table_name], |_| Ok(()))?;
+    let exists = rows.count() > 0;
+    Ok(exists)
 }
 
 #[cfg(test)]
