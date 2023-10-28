@@ -33,7 +33,7 @@ All four of these workflows can be seen at a glance in the badges at the top of 
    + `order_iris_table`: This was an extra function written just to order the database as per one of the columns' values (namely, the sepal_length column).
   This file also has `unit tests` to test the functionality of all of the functions. As seen in the screenshot below, my project passes all the tests:
   <p align = 'center'><img width="1011" alt="image" src="https://github.com/nogibjj/aad64_cloud_hosted_nb/assets/143753050/9e2371ab-dc88-4a2e-bbe6-93880c8bfe80"></p>
-2. __[main.rs](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/src/main.rs)__: This file calls the functions written in lib.rs. It then outputs the results with reference to a database in this project, namely, [iris.csv](https://github.com/nogibjj/aad64_Individual_Project_2/blob/mainiris.db). 
+2. [main.rs](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/src/main.rs): This file calls the functions written in lib.rs. It then outputs the results with reference to a database in this project, namely, [iris.csv](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/iris.db). 
 
 ### 3. [Cargo.toml](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/Cargo.toml)
 This file is the `Cargo.toml` manifest for a Rust project named `rust_sqlite` with dependencies on `csv`, `reqwest`, and `rusqlite` libraries. It specifies the project version, edition, and library configuration.
