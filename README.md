@@ -1,8 +1,8 @@
 # aad64_Individual_Project_2
 Rust CLI Binary with SQLite
 
-[![Format](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/format.yml)
 [![BuildBinary](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/build.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/build.yml)
+[![Format](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/format.yml)
 [![Lint](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/lint.yml)
 [![Test](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/test.yml)
 
