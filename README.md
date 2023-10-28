@@ -1,6 +1,11 @@
 # aad64_Individual_Project_2
 Rust CLI Binary with SQLite
 
+[![Format](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/format.yml)
+[![BuildBinary](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/build.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/build.yml)
+[![Lint](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/lint.yml)
+[![Test](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/aad64_Individual_Project_2/actions/workflows/test.yml)
+
 ## Goals:
 The goal of this assignment was to create a project that connects to a SQLite database using Rust source code. For the same, I chose to use the classic iris.csv dataset to load into a database and then perform CRUD operations on. This project carries out these SQL queries while maintaining functioning github workflows (namely, lint, format, test, and specifically for Rust- build). Furthermore, this project also used GitHub Co-Pilot through the process which will be further discussed below along with the other details of the project. 
 
@@ -8,13 +13,13 @@ The goal of this assignment was to create a project that connects to a SQLite da
 
 ### 1. GitHub Workflows:
 All four of these workflows can be seen at a glance in the badges at the top of this README. For further details, the folliwing bullet list gives you some more information about each:
-1. __[build.yml](https://github.com/nogibjj/aad64_Individual_Project_2/.github/workflows/build.yml):
+1. __[build.yml](https://github.com/nogibjj/aad64_Individual_Project_2/.github/workflows/build.yml)__:
 + This workflow helps in creating a binary file for this Rust project. 
-2. __[format.yml](https://github.com/nogibjj/aad64_Individual_Project_2/.github/workflows/format.yml):
+2. __[format.yml](https://github.com/nogibjj/aad64_Individual_Project_2/.github/workflows/format.yml)__:
 + This worflow helps in formating the entire project using the command `cargo fmt --quiet`. 
-3. __[lint.yml](https://github.com/nogibjj/aad64_Individual_Project_2/.github/workflows/lint.yml):
+3. __[lint.yml](https://github.com/nogibjj/aad64_Individual_Project_2/.github/workflows/lint.yml)__:
 + This workflow lints the project to analyse the source code and flag any issues which may arise in it, such as, syntax errors, dead code, etc. 
-4. __[test.yml](https://github.com/nogibjj/aad64_Individual_Project_2/.github/workflows/test.yml):
+4. __[test.yml](https://github.com/nogibjj/aad64_Individual_Project_2/.github/workflows/test.yml)__:
 + This final workflow ensures to go through the unit tests that were written in my source code (specifically, in `lib.rs`). As seen in the following section, the project passed all tests successfully.
 
 ### 2. src Folder:
