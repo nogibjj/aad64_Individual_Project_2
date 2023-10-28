@@ -65,7 +65,7 @@ If one tries to run these commands in impossible situations, e.g., ordering a ta
 ### Create and Read:
 As suggested earlier, the functions `create_iris_table` and `print_first_five_rows` help in creating the database and reading the first five rows. The functions are built in a way to show that this has been successfully created and then print the first five rows of the successfully created database. 
 
-<img width="1267" alt="image" src="https://github.com/nogibjj/aad64_cloud_hosted_nb/assets/143753050/29d8ec18-3065-4392-8415-3dc023756f36">
+<img width="1200" height = "500" alt="image" src="https://github.com/nogibjj/aad64_cloud_hosted_nb/assets/143753050/29d8ec18-3065-4392-8415-3dc023756f36">
 
 The screenshot below shows the command `cargo run insert` successfully inserting and printing all the rows inserted into the Iris table in the database.
 
