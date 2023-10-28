@@ -1,6 +1,9 @@
 format:
 	cargo fmt --quiet
 
+release:
+	cargo build --release
+
 lint:
 	cargo clippy --quiet
 
@@ -10,7 +13,4 @@ test:
 run:
 	cargo run 
 
-run-release:
-	cargo run --release --bin my_binary
-
-all: format lint test run
+all: format lint test release run

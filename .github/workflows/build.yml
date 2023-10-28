@@ -1,4 +1,4 @@
-name: Format
+name: Build
 
 on: [push, pull_request]
 
@@ -14,5 +14,5 @@ jobs:
           profile: minimal
           components: clippy, rustfmt
           override: true
-      - name: Format
-        run: make format
+      - name: Run Release
+        run: make release

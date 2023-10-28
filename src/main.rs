@@ -1,48 +1,64 @@
-use rusqlite::{params, Connection};
-use std::error::Error;
-use std::fs::OpenOptions;
-use std::io::Write;
+use std::env;
+use rusqlite::Connection;
 
-fn main() -> Result<(), Box<dyn Error>> {
-    // Establishing a connection to the database
+fn main() {
+    if let Err(err) = run_database_operation() {
+        eprintln!("Error: {:?}", err);
+    }
+}
+
+fn run_database_operation() -> Result<(), rusqlite::Error> {
     let conn = Connection::open("iris.db")?;
 
-    // Reading SQL queries from queries.sql
-    let queries = std::fs::read_to_string("src/queries.sql")?;
-
-    // Creating a markdown file for appending
-    let mut file = OpenOptions::new()
-        .append(true)
-        .create(true)
-        .open("queries_results.md")?;
-
-    // Executing each query and writing the result to the markdown file
-    for query in queries.split(';') {
-        if !query.trim().is_empty() {
-            // Executing the query
-            let mut stmt = conn.prepare(query)?;
-            // Writing the query to the markdown file
-            writeln!(file, "Query: {}", query.trim())?;
-
-            // Executing the query and getting the result
-            let mut rows = stmt.query(params![])?;
-
-            // Write the result to the markdown file
-            while let Some(row) = rows.next()? {
-                let mut row_values = Vec::new();
-                for i in 0..row.column_count() {
-                    let value: Option<String> = row.get(i)?;
-                    if let Some(value) = value {
-                        row_values.push(value);
-                    }
-                }
-                writeln!(file, "{}", row_values.join(", "))?;
-            }
-        }
+    let args: Vec<String> = env::args().collect();
+    if args.len() < 2 {
+        eprintln!("Usage: {} <function>", args[0]);
+        return Ok(());
     }
 
-    // Close the file
-    drop(file);
+    match args[1].as_str() {
+        "create" => {
+            println!("Creating Iris table...");
+            iris_functions::create_iris_table(&conn)?;
+            println!("Iris table exists: {}", iris_functions::table_exists(&conn, "Iris")?);
+            println!("Iris table created successfully.");
+        }
+        "insert" => {
+            println!("Inserting Iris data...");
+            iris_functions::insert_iris_data(&conn)?;
+            println!("Iris data inserted successfully.");
+        }
+        "print" => {
+            println!("Printing first five rows...");
+            iris_functions::print_first_five_rows(&conn)?;
+            println!("Printed first five rows successfully.");
+        }
+        "initial" => {
+            println!("Inserting initial data...");
+            iris_functions::insert_initial_data(&conn)?;
+            println!("Initial data inserted successfully.");
+        }
+        "update" => {
+            println!("Updating Iris table...");
+            iris_functions::update_iris_table(&conn)?;
+            println!("Iris table updated successfully.");
+        }
+        "order" => {
+            println!("Ordering Iris table...");
+            iris_functions::order_iris_table(&conn)?;
+            println!("Iris table ordered successfully.");
+        }
+        "drop" => {
+            println!("Dropping Iris table...");
+            iris_functions::drop_iris_table(&conn)?;
+            println!("Iris table exists: {}", iris_functions::table_exists(&conn, "Iris")?);
+            println!("Iris table dropped successfully.");
+        }
+        _ => {
+            eprintln!("Invalid function: {}", args[1]);
+            return Ok(());
+        }
+    }
 
     Ok(())
 }
