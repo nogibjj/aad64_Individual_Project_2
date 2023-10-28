@@ -23,7 +23,7 @@ All four of these workflows can be seen at a glance in the badges at the top of 
 + This final workflow ensures to go through the unit tests that were written in my source code (specifically, in `lib.rs`). As seen in the following section, the project passed all tests successfully.
 
 ### 2. src Folder:
-1. __[lib.rs](https://github.com/nogibjj/aad64_Individual_Project_2/src/lib.rs)__: This file holds all the functions necesary to create a database connection, create a table in said database and then carry out the rest of the CRUD operations. For the same, 8 functions were written:
+1. __[lib.rs](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/src/lib.rs)__: This file holds all the functions necesary to create a database connection, create a table in said database and then carry out the rest of the CRUD operations. For the same, 8 functions were written:
    + `create_iris_table` and `drop_iris_table` help in creating and deleting the Iris table in my database. 
    + `table_exists` was written as a complementary function for the above two, to check if they are working as required. This function was then called in main.rs along with the above functions to double-check their functionality. 
    + `insert_iris_data`: This inserts all the values from iris.csv to the Iris table in my databased called iris.db
@@ -33,12 +33,12 @@ All four of these workflows can be seen at a glance in the badges at the top of 
    + `order_iris_table`: This was an extra function written just to order the database as per one of the columns' values (namely, the sepal_length column).
   This file also has `unit tests` to test the functionality of all of the functions. As seen in the screenshot below, my project passes all the tests:
   <p align = 'center'><img width="1011" alt="image" src="https://github.com/nogibjj/aad64_cloud_hosted_nb/assets/143753050/9e2371ab-dc88-4a2e-bbe6-93880c8bfe80"></p>
-3. __[main.rs](https://github.com/nogibjj/aad64_Individual_Project_2/src/main.rs)__: This file calls the functions written in lib.rs. It then outputs the results with reference to a database in this project, namely, [iris.csv](https://github.com/nogibjj/aad64_Individual_Project_2/iris.db). 
+2. __[main.rs](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/src/main.rs)__: This file calls the functions written in lib.rs. It then outputs the results with reference to a database in this project, namely, [iris.csv](https://github.com/nogibjj/aad64_Individual_Project_2/blob/mainiris.db). 
 
-### 3. [Cargo.toml](https://github.com/nogibjj/aad64_Individual_Project_2/Cargo.toml)
+### 3. [Cargo.toml](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/Cargo.toml)
 This file is the `Cargo.toml` manifest for a Rust project named `rust_sqlite` with dependencies on `csv`, `reqwest`, and `rusqlite` libraries. It specifies the project version, edition, and library configuration.
 
-### 4. [Makefile](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/Makefile))
+### 4. [Makefile](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/Makefile)
 This is a `Makefile` used for automating various tasks in a Rust project:
 - `format`: Invokes `cargo fmt` to automatically format the code according to Rust style guidelines.
 - `lint`: Executes `cargo clippy` to perform linting and static analysis to catch potential issues or non-idiomatic code.
