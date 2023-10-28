@@ -38,7 +38,7 @@ All four of these workflows can be seen at a glance in the badges at the top of 
 ### 3. [Cargo.toml](https://github.com/nogibjj/aad64_Individual_Project_2/Cargo.toml)
 This file is the `Cargo.toml` manifest for a Rust project named `rust_sqlite` with dependencies on `csv`, `reqwest`, and `rusqlite` libraries. It specifies the project version, edition, and library configuration.
 
-### 4. [Makefile](https://github.com/nogibjj/aad64_Individual_Project_2/Makefile)
+### 4. [Makefile]([https://github.com/nogibjj/aad64_Individual_Project_2/Makefile](https://github.com/nogibjj/aad64_Individual_Project_2/blob/main/Makefile))
 This is a `Makefile` used for automating various tasks in a Rust project:
 - `format`: Invokes `cargo fmt` to automatically format the code according to Rust style guidelines.
 - `lint`: Executes `cargo clippy` to perform linting and static analysis to catch potential issues or non-idiomatic code.
